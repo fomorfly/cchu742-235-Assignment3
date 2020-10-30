@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<main id="main">
+    <p>{{opt_msg}}</p>
+    <br>
+
+        <div class="form-wrapper">
+            <form action="{{handler_url}}" method="post">
+                {{form.csrf_token}}
+                <br>
+                <div class ="form-field">
+                    {{form.genre.label}} </br>
+                    {{form.genre(size = 100, placeholder="type your genres saperated by commas eg. horror, action, comedy", class="textarea", cols="50", rows="3", wrap="hard")}}
+                </div>
+
+                <div class ="form-field">
+                    {{form.director.label}} </br>
+                    {{form.director(size = 100, placeholder="type your directors saperated by commas", class="textarea", cols="50", rows="3", wrap="hard")}}
+                </div>
+
+                <div class ="form-field">
+                    {{form.actor.label}} </br>
+                    {{form.actor(size = 100, placeholder="type your actors saperated by commas", class="textarea", cols="50", rows="3", wrap="hard")}}
+                </div>
+
+                <br>
+                {{ form.submit }}
+            </form>
+
+
+        </div>
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

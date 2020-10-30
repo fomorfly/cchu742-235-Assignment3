@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CS235Flix Movie App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+  </head>
+
+  <body>
+    <div id="body">
+
+      <!-- Include navigation partial. -->
+      {% include 'navigation.html' %}
+
+      <div id="appname">
+
+        <!-- Include header partial. -->
+        {% include 'header.html' %}
+
+        <div id="container">
+
+          <!-- Main content block to be supplied by page. -->
+          {% block content %} {% endblock %}
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

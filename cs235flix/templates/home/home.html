@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} {% block content %}
+<main id="main">
+
+  <p>Select Movies</p>
+
+  {% for movie in movies %}
+  <a class="btn-simp" onclick="location.href='{{movie.view_movie_url}}'">{{movie["movie"].title}}, {{movie["movie"].release}}</a>
+
+    <br>
+  {% endfor %}
+
+  <a class="btn-general" href="{{ prev_home_url }}">prev</a>
+  <a class="btn-general" href="{{ next_home_url }}">next</a>
+
+</main>
+{% endblock %}
